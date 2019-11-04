@@ -1,0 +1,101 @@
+﻿@model PersonalTable.Models.Visitor
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/Public/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="main-section">
+        <div class="container main-section">
+            <div class="img-container" id="img-container">
+                <div class="row justify-content-center">
+                    <h1 class="header-h1">Sistemdə mövcud olmayan şəxs,sarı bölgəyə klikləyərək sistemə yükləyin.</h1>
+                </div>
+                <div class="row img-row">
+                    <div class="focus-div" onclick="Opacity()">
+
+                    </div>
+                    <img width="100%"
+                         src="~/Public/img/cin-uygur-turkleri-icin-ms-celeb-i-kullaninca-microsoft-veri-tabanini-internetten-sildi.jpg"
+                         alt="">
+                </div>
+            </div>
+
+            <div class="form-container" id="form-container">
+                <div class="row personal-3x4-img ml-1 mb-5">
+                    <img src="~/Public/img/cin-uygur-turkleri-icin-ms-celeb-i-kullaninca-microsoft-veri-tabanini-internetten-sildi.jpg" alt="sdddddddddddddddd">
+                </div>
+                @using (Html.BeginForm("AddVisitor", "Home", FormMethod.Post, new { enctype = "multipart/form-data", id = "forms" }))
+                {
+
+
+
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Ad</label>
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Soyad</label>
+                            @Html.TextBoxFor(m => m.Surname, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Nömrə</label>
+                            @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        @Html.TextBoxFor(m => m.Adress, new { @class = "form-control" })
+
+
+                    </div>
+                    <div class="form-group">
+
+                        <input type="file" id="Photo" name="Photo" value="" />
+
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary" onclick="Alert()">Saxla</button>
+                }
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " > </script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+
+
+    <script src="~/Public/js/script.js"></script>
+</body>
+
+
+</html>
+
